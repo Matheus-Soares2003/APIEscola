@@ -11,7 +11,7 @@ public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name="nome", length = 100, nullable = false)
     private String nome;
@@ -26,7 +26,7 @@ public class Aluno {
     @JoinColumn(name="id_turma", nullable = false)
     private Turma turma;
 
-    public Aluno(Integer id, String nome, String ra, LocalDate dataNascimento, Turma turma) {
+    public Aluno(Long id, String nome, String ra, LocalDate dataNascimento, Turma turma) {
         this.id = id;
         this.nome = nome;
         this.ra = ra;
@@ -37,11 +37,11 @@ public class Aluno {
     public Aluno() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

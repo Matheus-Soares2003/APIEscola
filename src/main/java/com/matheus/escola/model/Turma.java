@@ -12,7 +12,7 @@ public class Turma {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name="nome", length = 50, nullable = false, unique = true)
     private String nome;
@@ -29,7 +29,7 @@ public class Turma {
     @OneToMany(mappedBy = "turma")
     private List<Aluno> alunos = new ArrayList<>();
 
-    public Turma(Integer id, String nome, int numeroSala, int capacidade, int qtdAlunos, List<Aluno> alunos) {
+    public Turma(Long id, String nome, int numeroSala, int capacidade, int qtdAlunos, List<Aluno> alunos) {
         this.id = id;
         this.nome = nome;
         this.numeroSala = numeroSala;
@@ -41,11 +41,11 @@ public class Turma {
     public Turma() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
