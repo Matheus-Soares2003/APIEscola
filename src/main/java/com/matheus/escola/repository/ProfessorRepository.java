@@ -15,7 +15,7 @@ public interface ProfessorRepository extends JpaRepository<Professor, Long> {
 
     List<Professor> findByMateriaId(Long materiaId);
 
-    @Query(value="SELECT * FROM professores p JOIN materias m ON p.materia_id = m.id WHERE m.nome LIKE :materiaNome%", nativeQuery = true)
+    @Query(value="SELECT p.* FROM professores p JOIN materias m ON p.materia_id = m.id WHERE UPPER(m.nome) LIKE UPPER(:materiaNome%)", nativeQuery = true)
     List<Professor> findByMateriaNome(@Param("materiaNome") String materiaNome);
 
 }
