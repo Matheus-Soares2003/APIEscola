@@ -1,0 +1,4 @@
+CREATE TABLE materias(
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(30) NOT NULL
+);
