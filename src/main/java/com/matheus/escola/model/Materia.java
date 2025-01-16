@@ -11,7 +11,7 @@ public class Materia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name="nome", length = 30, nullable = false)
     private String nome;
@@ -19,7 +19,7 @@ public class Materia {
     @OneToMany(mappedBy = "materia")
     private List<Professor> professores;
 
-    public Materia(Integer id, String nome, List<Professor> professores) {
+    public Materia(Long id, String nome, List<Professor> professores) {
         this.id = id;
         this.nome = nome;
         this.professores = professores;
@@ -28,11 +28,11 @@ public class Materia {
     public Materia() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
