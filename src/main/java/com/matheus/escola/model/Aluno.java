@@ -82,11 +82,11 @@ public class Aluno {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Aluno aluno = (Aluno) o;
-        return Objects.equals(id, aluno.id) && Objects.equals(nome, aluno.nome) && Objects.equals(ra, aluno.ra) && Objects.equals(dataNascimento, aluno.dataNascimento) && Objects.equals(turma, aluno.turma);
+        return Objects.equals(id, aluno.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, ra, dataNascimento, turma);
+        return Objects.hashCode(id);
     }
 }

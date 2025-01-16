@@ -94,11 +94,11 @@ public class Turma {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Turma turma = (Turma) o;
-        return numeroSala == turma.numeroSala && capacidade == turma.capacidade && qtdAlunos == turma.qtdAlunos && Objects.equals(id, turma.id) && Objects.equals(nome, turma.nome) && Objects.equals(alunos, turma.alunos);
+        return Objects.equals(id, turma.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, numeroSala, capacidade, qtdAlunos, alunos);
+        return Objects.hashCode(id);
     }
 }
