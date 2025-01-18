@@ -13,7 +13,7 @@ import java.util.Objects;
 public class HorarioTurmaId implements Serializable {
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "dia_semana", nullable = false)
+    @Column(name = "dia_semana", length = 15, nullable = false)
     private DiaSemana diaSemana;
 
     @Column(name = "hora_inicio", nullable = false)
