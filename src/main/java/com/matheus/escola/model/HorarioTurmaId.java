@@ -20,9 +20,9 @@ public class HorarioTurmaId implements Serializable {
     private LocalTime horaInicio;
 
     @Column(name = "professor_id", nullable = false)
-    private Integer professorId;
+    private Long professorId;
 
-    public HorarioTurmaId(DiaSemana diaSemana, LocalTime horaInicio, Integer professorId) {
+    public HorarioTurmaId(DiaSemana diaSemana, LocalTime horaInicio, Long professorId) {
         this.diaSemana = diaSemana;
         this.horaInicio = horaInicio;
         this.professorId = professorId;
@@ -47,11 +47,11 @@ public class HorarioTurmaId implements Serializable {
         this.horaInicio = horaInicio;
     }
 
-    public Integer getProfessorId() {
+    public Long getProfessorId() {
         return professorId;
     }
 
-    public void setProfessorId(Integer professorId) {
+    public void setProfessorId(Long professorId) {
         this.professorId = professorId;
     }
 
