@@ -27,18 +27,30 @@ public class Turma {
     private int qtdAlunos;
 
     @OneToMany(mappedBy = "turma")
-    private List<Aluno> alunos = new ArrayList<>();
+    private List<Aluno> alunos;
 
-    public Turma(Long id, String nome, int numeroSala, int capacidade, int qtdAlunos, List<Aluno> alunos) {
+    @OneToMany(mappedBy = "turma")
+    private List<HorarioTurma> horariosTurmas;
+
+    public Turma(Long id, String nome, int numeroSala, int capacidade, int qtdAlunos, List<Aluno> alunos, List<HorarioTurma> horariosTurmas) {
         this.id = id;
         this.nome = nome;
         this.numeroSala = numeroSala;
         this.capacidade = capacidade;
         this.qtdAlunos = qtdAlunos;
         this.alunos = alunos;
+        this.horariosTurmas = horariosTurmas;
     }
 
     public Turma() {
+    }
+
+    public Turma(Long id, String nome, int numeroSala, int capacidade, int qtdAlunos) {
+        this.id = id;
+        this.nome = nome;
+        this.numeroSala = numeroSala;
+        this.capacidade = capacidade;
+        this.qtdAlunos = qtdAlunos;
     }
 
     public Long getId() {
@@ -87,6 +99,10 @@ public class Turma {
 
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
+    }
+
+    public List<HorarioTurma> getHorariosTurmas() {
+        return horariosTurmas;
     }
 
     @Override

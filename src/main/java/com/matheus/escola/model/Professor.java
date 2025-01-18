@@ -2,6 +2,7 @@ package com.matheus.escola.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -25,15 +26,27 @@ public class Professor {
     @JoinColumn(name="materia_id", nullable = false)
     private Materia materia;
 
+    @OneToMany(mappedBy = "professor")
+    private List<HorarioTurma> horariosTurmas;
+
+    public Professor(Long id, String nome, String email, String telefone, Materia materia, List<HorarioTurma> horariosTurmas) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.materia = materia;
+        this.horariosTurmas = horariosTurmas;
+    }
+
+    public Professor() {
+    }
+
     public Professor(Long id, String nome, String email, String telefone, Materia materia) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.materia = materia;
-    }
-
-    public Professor() {
     }
 
     public Long getId() {
@@ -74,6 +87,10 @@ public class Professor {
 
     public void setMateria(Materia materia) {
         this.materia = materia;
+    }
+
+    public List<HorarioTurma> getHorariosTurmas() {
+        return horariosTurmas;
     }
 
     @Override
