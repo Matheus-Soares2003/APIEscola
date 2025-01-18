@@ -12,7 +12,7 @@ public class HorarioTurma {
     @EmbeddedId
     private HorarioTurmaId id;
 
-    @Column(name="dia_semana", nullable = false, insertable = false, updatable = false)
+    @Column(name="dia_semana", length = 15, nullable = false, insertable = false, updatable = false)
     private DiaSemana diaSemana;
 
     @Column(name="hora_inicio", nullable = false, insertable = false, updatable = false)
