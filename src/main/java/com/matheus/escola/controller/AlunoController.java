@@ -36,4 +36,10 @@ public class AlunoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(alunoResponse);
     }
 
+    //TODO: criar service para implementar a funcionalidade de buscar aluno por ID
+    @GetMapping("/{id}")
+    public ResponseEntity<AlunoResponseDTO> pesquisarAlunoPorId(@PathVariable Long id){
+        return null;
+    }
+
 }
