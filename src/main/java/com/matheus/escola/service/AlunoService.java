@@ -2,6 +2,7 @@ package com.matheus.escola.service;
 
 import com.matheus.escola.DTO.AlunoRequestDTO;
 import com.matheus.escola.DTO.AlunoResponseDTO;
+import com.matheus.escola.DTO.TurmaResponseDTO;
 import com.matheus.escola.model.Aluno;
 import com.matheus.escola.model.Turma;
 import com.matheus.escola.repository.AlunoRepository;
@@ -39,12 +40,13 @@ public class AlunoService {
                 alunoCriado.getNome(),
                 alunoCriado.getRa(),
                 alunoCriado.getDataNascimento(),
-                alunoCriado.getTurma().getId()
+                new TurmaResponseDTO(turma.getId(), turma.getNome(), turma.getNumeroSala())
         );
 
     }
 
     public List<AlunoResponseDTO> listarAlunos(){
+
         List<AlunoResponseDTO> alunos = alunoRepository.findAll()
                 .stream()
                 .map(aluno -> new AlunoResponseDTO(
@@ -52,7 +54,7 @@ public class AlunoService {
                         aluno.getNome(),
                         aluno.getRa(),
                         aluno.getDataNascimento(),
-                        aluno.getTurma().getId()
+                        new TurmaResponseDTO(aluno.getTurma().getId(), aluno.getTurma().getNome(), aluno.getTurma().getNumeroSala())
                 ))
                 .toList();
 
