@@ -8,14 +8,14 @@ public record AlunoResponseDTO (
     String nome,
     String ra,
     LocalDate dataNascimento,
-    TurmaResponseDTO turma
+    Long turmaId
 ){
 
-    public AlunoResponseDTO(Long id, String nome, String ra, LocalDate dataNascimento, TurmaResponseDTO turma) {
+    public AlunoResponseDTO(Long id, String nome, String ra, LocalDate dataNascimento, Long turmaId) {
         this.id = id;
         this.nome = nome;
         this.ra = ra;
         this.dataNascimento = dataNascimento;
-        this.turma = turma;
+        this.turmaId = turmaId;
     }
 }
