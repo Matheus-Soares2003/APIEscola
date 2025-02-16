@@ -40,7 +40,7 @@ public class AlunoService {
                 alunoCriado.getNome(),
                 alunoCriado.getRa(),
                 alunoCriado.getDataNascimento(),
-                new TurmaResponseDTO(turma.getId(), turma.getNome(), turma.getNumeroSala())
+                turma.getId()
         );
 
     }
@@ -54,7 +54,7 @@ public class AlunoService {
                         aluno.getNome(),
                         aluno.getRa(),
                         aluno.getDataNascimento(),
-                        new TurmaResponseDTO(aluno.getTurma().getId(), aluno.getTurma().getNome(), aluno.getTurma().getNumeroSala())
+                        aluno.getTurma().getId()
                 ))
                 .toList();
 
