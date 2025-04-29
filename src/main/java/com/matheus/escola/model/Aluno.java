@@ -1,5 +1,6 @@
 package com.matheus.escola.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -24,6 +25,7 @@ public class Aluno {
 
     @ManyToOne
     @JoinColumn(name="id_turma", nullable = false)
+    @JsonBackReference
     private Turma turma;
 
     public Aluno(Long id, String nome, String ra, LocalDate dataNascimento, Turma turma) {

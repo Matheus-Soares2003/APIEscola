@@ -1,5 +1,6 @@
 package com.matheus.escola.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class Turma {
     private int qtdAlunos;
 
     @OneToMany(mappedBy = "turma")
+    @JsonManagedReference
     private List<Aluno> alunos;
 
     @OneToMany(mappedBy = "turma")

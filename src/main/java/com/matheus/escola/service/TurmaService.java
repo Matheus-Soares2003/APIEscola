@@ -22,7 +22,8 @@ public class TurmaService {
                         t.getNome(),
                         t.getNumeroSala(),
                         t.getCapacidade(),
-                        t.getQtdAlunos()
+                        t.getQtdAlunos(),
+                        t.getAlunos()
                 ))
                 .toList();
     }
